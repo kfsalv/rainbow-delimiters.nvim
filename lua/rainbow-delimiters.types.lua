@@ -79,6 +79,7 @@
 ---@field nix          (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
 ---@field perl         (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
 ---@field php          (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
+---@field powershell   (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
 ---@field python       (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
 ---@field query        (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
 ---@field r            (rainbow_delimiters.strategy | fun(bufnr: integer): rainbow_delimiters.strategy?)?
@@ -147,6 +148,7 @@
 ---@field nix          (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field perl         (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field php          (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
+---@field powershell   (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field python       (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
 ---@field query        (('rainbow-delimiters' | 'rainbow-blocks' | string) | fun(bufnr: integer): ('rainbow-delimiters' | 'rainbow-blocks' | string))?
 ---@field r            (('rainbow-delimiters' | string) | fun(bufnr: integer): ('rainbow-delimiters' | string))?
@@ -215,6 +217,7 @@
 ---@field nix          (integer | fun(bufnr: integer): integer)?
 ---@field perl         (integer | fun(bufnr: integer): integer)?
 ---@field php          (integer | fun(bufnr: integer): integer)?
+---@field powershell   (integer | fun(bufnr: integer): integer)?
 ---@field python       (integer | fun(bufnr: integer): integer)?
 ---@field query        (integer | fun(bufnr: integer): integer)?
 ---@field r            (integer | fun(bufnr: integer): integer)?
@@ -283,6 +286,7 @@
 ---| 'nix'
 ---| 'perl'
 ---| 'php'
+---| 'powershell'
 ---| 'python'
 ---| 'query'
 ---| 'r'
