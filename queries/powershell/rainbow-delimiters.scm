@@ -23,8 +23,8 @@
 
 (function_statement
   (function_parameter_declaration
-  	"(" @delimiter
-  	")" @delimiter)?
+    "(" @delimiter
+    ")" @delimiter)?
   "{" @delimiter
   "}" @delimiter @sentinel) @container
 
@@ -82,8 +82,8 @@
 
 (class_method_definition
   (
-  	"(" @delimiter
-  	")" @delimiter)
+    "(" @delimiter
+    ")" @delimiter)
   "{" @delimiter
   "}" @delimiter @sentinel) @container
 
@@ -151,8 +151,8 @@
 ;(attribute
 ;  "[" @delimiter
 ;  (
-;  	"(" @delimiter
-;  	")" @delimiter)
+;   "(" @delimiter
+;   ")" @delimiter)
 ;  "]" @delimiter @sentinel) @container
 
 
