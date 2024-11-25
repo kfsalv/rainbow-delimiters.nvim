@@ -16,19 +16,17 @@
 ;;;  (_)*
 ;;;  "]" @delimiter @sentinel) @container
 
+
 (parenthesized_expression
   "(" @delimiter
   ")" @delimiter @sentinel) @container
 
-;;; function_statement and  function_parameter_declaration
-;;; should be joined in one query to be on same level
 (function_statement
+  (function_parameter_declaration
+  	"(" @delimiter
+  	")" @delimiter)?
   "{" @delimiter
   "}" @delimiter @sentinel) @container
-
-(function_parameter_declaration
-  "(" @delimiter
-  ")" @delimiter @sentinel) @container
 
 (argument_list
   "(" @delimiter
@@ -37,7 +35,6 @@
 (if_statement
   "(" @delimiter
   ")" @delimiter @sentinel) @container
-
 
 (elseif_clause
   "(" @delimiter
@@ -83,15 +80,12 @@
   "{" @delimiter
   "}" @delimiter @sentinel) @container
 
-;;; class_method_definition and  class_method_definition
-;;; should be joined in one query to be on same level
 (class_method_definition
+  (
+  	"(" @delimiter
+  	")" @delimiter)
   "{" @delimiter
   "}" @delimiter @sentinel) @container
-
-(class_method_definition
-  "(" @delimiter
-  ")" @delimiter @sentinel) @container
 
 (enum_statement
   "{" @delimiter
@@ -101,6 +95,8 @@
   "[" @delimiter
   "]" @delimiter @sentinel) @container
 
+
+; inner () in new color as outer [] like VSCode
 (attribute
   "[" @delimiter
   "]" @delimiter @sentinel) @container
@@ -109,23 +105,35 @@
   "(" @delimiter
   ")" @delimiter @sentinel) @container
 
+
+; inner () in same color as outer []
+;(attribute
+;  "[" @delimiter
+;  (
+;  	"(" @delimiter
+;  	")" @delimiter)
+;  "]" @delimiter @sentinel) @container
+
+
 (type_literal
   "[" @delimiter
   "]" @delimiter @sentinel) @container
 
-;;;(type_spec
-;;;  (array_type_name
-;;;    "[" @delimiter)*
-;;;  (generic_type_name
-;;;    "[" @delimiter)*
-;;;  (generic_type_arguments)*
-;;;  "]" @delimiter @sentinel) @container
+;(type_spec
+;  (array_type_name
+;    "[" @delimiter)*
+;  (generic_type_name
+;    "[" @delimiter)*
+;  (generic_type_arguments)*
+;  "]" @delimiter @sentinel) @container
 
+; type_spec array
 (type_spec
   (array_type_name
     "[" @delimiter)
   "]" @delimiter @sentinel) @container
 
+; type_spec generics
 (type_spec
   (generic_type_name
     "[" @delimiter)
