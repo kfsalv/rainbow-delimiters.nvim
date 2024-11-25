@@ -91,10 +91,51 @@
   "{" @delimiter
   "}" @delimiter @sentinel) @container
 
-(element_access
-  "[" @delimiter
-  "]" @delimiter @sentinel) @container
+(unary_expression
+  (element_access
+    (element_access
+      (element_access
+        (element_access
+          (variable) @container
+          "[" @delimiter
+          "]" @delimiter @sentinel)
+        "[" @delimiter
+        "]" @delimiter @sentinel)
+      "[" @delimiter
+      "]" @delimiter @sentinel)
+    "[" @delimiter
+    "]" @delimiter @sentinel)
+	) @container
 
+(unary_expression
+  (element_access
+    (element_access
+      (element_access
+        (variable) @container
+        "[" @delimiter
+        "]" @delimiter @sentinel)
+      "[" @delimiter
+      "]" @delimiter @sentinel)
+    "[" @delimiter
+    "]" @delimiter @sentinel)
+	) @container
+
+(unary_expression
+  (element_access
+    (element_access
+             (variable) @container
+      "[" @delimiter
+      "]" @delimiter @sentinel)
+    "[" @delimiter
+    "]" @delimiter @sentinel)
+	) @container
+
+(unary_expression
+  (element_access
+    (variable) @container
+    "[" @delimiter
+    "]" @delimiter @sentinel)
+	) @container
 
 ; inner () in new color as outer [] like VSCode
 (attribute
